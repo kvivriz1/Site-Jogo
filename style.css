@@ -489,7 +489,7 @@
             height: 60px;
             z-index: 1000;
             cursor: pointer;
-            animation: fly-straight 8s linear infinite;
+            animation: fly-straight 22s linear infinite;
         }
 
         /* Update the bat SVG to be more pixelated */
