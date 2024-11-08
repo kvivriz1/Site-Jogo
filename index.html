@@ -1,0 +1,199 @@
+<html>
+<head>
+    <base href="." />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game Website Project</title>
+    <link rel="stylesheet" href="style.css">
+   
+</head>
+
+<body>
+    <div class="header">
+        <div class="hamburger" onclick="toggleSidebar()">
+            <svg width="20" height="20" viewBox="0 0 100 100">
+                <rect width="80" height="10" x="10" y="20" fill="white" />
+                <rect width="80" height="10" x="10" y="45" fill="white" />
+                <rect width="80" height="10" x="10" y="70" fill="white" />
+            </svg>
+        </div>
+        <div class="game-title">[Digite texto]</div>
+        <div class="profile-container">
+            <div class="profile-pic" onclick="toggleProfileMenu()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                </svg>
+            </div>
+            <div class="profile-menu" id="profileMenu">
+                <a href="javascript:void(0)" onclick="showSection('profile')">Profile</a>
+                <a href="javascript:void(0)" onclick="showSection('settings')">Settings</a>
+                <a href="javascript:void(0)" onclick="signOut()">Sign Out</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="sidebar" class="sidebar">
+        <div class="close-btn" onclick="toggleSidebar()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+            </svg>
+        </div>
+        <a href="javascript:void(0)" onclick="showSection('home')" data-translate="home">Início</a>
+        <a href="javascript:void(0)" onclick="showSection('download')" data-translate="download">Download</a>
+        <a href="javascript:void(0)" onclick="showSection('forum')" data-translate="forum">Fórum</a>
+        <a href="javascript:void(0)" onclick="showSection('shop')" data-translate="shop">Loja</a>
+        <a href="javascript:void(0)" onclick="showSection('donate')" data-translate="donate">Doar</a>
+        <a href="javascript:void(0)" onclick="showSection('auth')" data-translate="login">Entrar/Registrar</a>
+    </div>
+
+    <div class="main-content" id="main">
+        <div id="home-section" class="section active">
+            <h1>Bem vindo</h1>
+            <p>No momento o site está em desenvolvimento então, selecione alguma coisa no menu e explore</p>
+        </div>
+
+        <div id="download-section" class="section download-section">
+            <a href="https://example.com/download" class="download-button">Download do jogo</a>
+            <div class="synopsis">
+                <h2>Sinopse do jogo</h2>
+                <p>Digitar uma parte da sinopse aqui</p>
+            </div>
+        </div>
+
+        <div id="shop-section" class="section">
+            <div class="shop-grid">
+                <script>
+                    for (let i = 0; i < 60; i++) {
+                        document.write('<div class="shop-item"></div>');
+                    }
+                </script>
+            </div>
+            <div class="pagination">
+                <script>
+                    for (let i = 1; i <= 10; i++) {
+                        document.write(`<button>[${i}]</button>`);
+                    }
+                </script>
+            </div>
+        </div>
+
+        <div id="forum-section" class="section forum-section">
+            <div class="chat-box" id="chatBox">
+                <!-- Chat messages will be inserted here -->
+            </div>
+            <form id="chatForm" class="chat-form">
+                <input type="text" id="messageInput" placeholder="Type your message..." required>
+                <button type="submit">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+                    </svg>
+                </button>
+            </form>
+        </div>
+
+        <div id="donate-section" class="section">
+            <h2>Support Our Game</h2>
+            <!-- Donation content here -->
+        </div>
+
+        <div id="auth-section" class="section auth-forms">
+            <div class="auth-toggle-buttons">
+                <button onclick="toggleAuthForm('login')" class="auth-toggle active">Login</button>
+                <button onclick="toggleAuthForm('register')" class="auth-toggle">Register</button>
+            </div>
+
+            <form id="login-form">
+                <div class="google-btn">
+                    <button type="button" class="google-signin-btn">
+                        <svg viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                            <g transform="matrix(1, 0, 0, 1, 27.009001, -39.238998)">
+                                <path fill="#4285F4" d="M -3.264 51.509 C -3.264 50.719 -3.334 49.969 -3.454 49.239 L -14.754 49.239 L -14.754 53.749 L -8.284 53.749 C -8.574 55.229 -9.424 56.479 -10.684 57.329 L -10.684 60.329 L -6.824 60.329 C -4.564 58.239 -3.264 55.159 -3.264 51.509 Z" />
+                                <path fill="#34A853" d="M -14.754 63.239 C -11.514 63.239 -8.804 62.159 -6.824 60.329 L -10.684 57.329 C -11.764 58.049 -13.134 58.489 -14.754 58.489 C -17.884 58.489 -20.534 56.379 -21.484 53.529 L -25.464 53.529 L -25.464 56.619 C -23.494 60.539 -19.444 63.239 -14.754 63.239 Z" />
+                                <path fill="#FBBC05" d="M -21.484 53.529 C -21.734 52.809 -21.864 52.039 -21.864 51.239 C -21.864 50.439 -21.724 49.669 -21.484 48.949 L -21.484 45.859 L -25.464 45.859 C -26.284 47.479 -26.754 49.299 -26.754 51.239 C -26.754 53.179 -26.284 54.999 -25.464 56.619 L -21.484 53.529 Z" />
+                                <path fill="#EA4335" d="M -14.754 43.989 C -12.984 43.989 -11.404 44.599 -10.154 45.789 L -6.734 42.369 C -8.804 40.429 -11.514 39.239 -14.754 39.239 C -19.444 39.239 -23.494 41.939 -25.464 45.859 L -21.484 48.949 C -20.534 46.099 -17.884 43.989 -14.754 43.989 Z" />
+                            </g>
+                        </svg>
+                        Sign in with Google
+                    </button>
+                </div>
+                <div class="divider">
+                    <span>or</span>
+                </div>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+
+            <form id="register-form" style="display: none;">
+                <input type="text" placeholder="Username" id="register-username" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <input type="password" placeholder="Confirm Password" required>
+                <button type="submit">Register</button>
+            </form>
+        </div>
+
+        <div id="profile-section" class="section profile-section">
+            <div class="profile-header">
+                <div class="large-profile-pic">
+                    <svg width="50" height="50" viewBox="0 0 24 24" fill="white">
+                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                    </svg>
+                </div>
+                <div class="profile-name">User</div>
+                <button class="edit-username-btn" onclick="editUsername()">Edit Username</button>
+            </div>
+            <div class="bio-container">
+                <p id="bioText">Click to add your bio...</p>
+                <div class="bio-edit" onclick="editBio()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                        <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div id="settings-section" class="section">
+            <h2>Settings</h2>
+            <div class="settings-container">
+                <h3>Account Settings</h3>
+                <div class="setting-item">
+                    <label>Language:</label>
+                    <select id="language-select" onchange="changeLanguage(this.value)">
+                        <option value="pt">Português</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+                <div class="setting-item">
+                    <label>Theme:</label>
+                    <button id="theme-toggle" onclick="toggleTheme()">
+                        <span class="theme-text">Light Mode</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="support-bat" onclick="toggleSupportChat()">
+        <svg viewBox="0 0 32 32" fill="var(--accent)">
+            <path d="M16 8l-8 8l8 8l8-8z" />
+            <rect x="14" y="12" width="2" height="2" />
+            <rect x="18" y="12" width="2" height="2" />
+            <path d="M6 12l10-6l10 6l-10 14l-10-14z" />
+        </svg>
+    </div>
+
+    <div class="support-chat">
+        <p>Como posso ajudar?</p>
+        <form class="support-chat-form" onsubmit="handleSupportChat(event)">
+            <input type="text" placeholder="Digite sua mensagem..." required>
+            <button type="submit">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+                </svg>
+            </button>
+        </form>
+    </div>
+    <script src="header.js"></script>
+</body>
+</html>
