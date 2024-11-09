@@ -217,8 +217,8 @@
 
         .download-section {
             max-width: 1200px;
-            margin: 65px auto;
-            padding: 20px;
+            margin: 20px auto;
+            padding: 65px;
             background: var(--secondary);
             border-radius: 10px;
         }
