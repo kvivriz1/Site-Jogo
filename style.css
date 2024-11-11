@@ -1,12 +1,12 @@
         :root {
             /* Dark theme (default) */
-            --primary: #2C1810;
+            --primary: #2c2610;
             /* Deep brown */
             --secondary: #3C2A21;
             /* Rustic brown */
-            --accent: #8B4513;
+            --accent: #04270d;
             /* Saddle brown */
-            --text: #E8D3A9;
+            --text: #0b8a35;
             /* Parchment color */
             /* Light theme */
             --primary-light: #F5E6D3;
